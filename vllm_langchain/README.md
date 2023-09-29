@@ -1,4 +1,7 @@
+# How to generate text from vLLM just like a local model
 
+If model is not running, first see how to create inference endpoint
+[vLLM Reference](../vllm/README.md)
 
 ```bash
 from typing import Any, List, Mapping, Optional
@@ -17,11 +20,12 @@ generation_config = GenerationConfig.from_pretrained("../llama2_safe")
 default_config['max_tokens'] = default_config['max_length']
 ```
 
-will use for filtering args from config, otherwise vLLM raises error.
+We will use SamplingParams for filtering args from config, otherwise vLLM raises error.
 
+```bash
 from vllm import SamplingParams
-
 sp = SamplingParams()
+```
 
 ```bash
 import requests
