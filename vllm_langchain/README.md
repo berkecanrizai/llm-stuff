@@ -15,6 +15,19 @@ from transformers import AutoModelForCausalLM, GenerationConfig
 load the generation config (Huggingface)
 
 ```bash
+generation_config = GenerationConfig(
+    return_full_text=True,
+    task='text-generation',
+    #stopping_criteria=stopping_criteria,
+    temperature= 0.05, 
+    top_p=0.6,
+    top_k=5,
+    max_new_tokens=2000, # 200
+    #repetition_penalty=1.1,
+)
+
+generation_config.save_pretrained("llama2_safe")
+
 generation_config = GenerationConfig.from_pretrained("../llama2_safe")
 
 default_config['max_tokens'] = default_config['max_length']
