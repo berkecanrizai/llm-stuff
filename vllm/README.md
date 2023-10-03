@@ -11,3 +11,9 @@ You can check vllm.entrypoints in https://github.com/vllm-project/vllm/blob/main
 ```bash
 python -m vllm.entrypoints.api_server --host 127.0.0.1 --model NousResearch/Llama-2-7b-chat-hf
 ```
+
+# Mimicking OpenAI inference with open source models & vLLM
+
+```bash
+!python -m vllm.entrypoints.openai.api_server --host 127.0.0.1 --model NousResearch/Llama-2-7b-chat-hf
+```
